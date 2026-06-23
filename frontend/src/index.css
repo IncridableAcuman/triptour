@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  /* Tailwind v4 da dark modeni klass orqali boshqarish */
+  --variant-dark: .dark &;
+
+  /* Siz xohlagan custom ranglar variantlari */
+  --color-primary: #0EA5E9;
+  --color-secondary: #06B6D4;
+  --color-accent: #F97316;
+  --color-dark: #0F172A;
+  --color-light: #F8FAFC;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+}

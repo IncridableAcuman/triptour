@@ -1,5 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'class', // 👈 SHU YERDA BO'LISHI SHART, 'theme' ichida emas!
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -9,13 +14,6 @@ module.exports = {
         dark: '#0F172A',
         light: '#F8FAFC',
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Poppins', 'sans-serif'],
-      },
-      backdropBlur: {
-        xs: '2px',
-      }
     },
   },
   plugins: [],

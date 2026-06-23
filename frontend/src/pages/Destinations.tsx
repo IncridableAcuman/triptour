@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, MapPin, Search, Compass, SlidersHorizontal } from 'lucide-react';
+import { Footer } from '../components/Footer';
 
 interface Destination {
   id: number;
@@ -250,6 +251,9 @@ export const Destinations: React.FC = () => {
           </div>
         )}
 
+      </div>
+      <div className="pt-12">
+        <Footer/>
       </div>
     </div>
   );

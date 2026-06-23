@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Send, Loader2 } from 'lucide-react';
+import { Footer } from '../components/Footer';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: "Ism kamida 2 ta belgidan iborat bo'lishi kerak." }),
@@ -161,6 +162,9 @@ export const Contact: React.FC = () => {
           </form>
         </motion.div>
       </motion.div>
+      <div className="pt-12">
+        <Footer/>
+      </div>
     </div>
   );
 };
