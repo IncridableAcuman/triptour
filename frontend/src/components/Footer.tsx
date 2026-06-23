@@ -7,13 +7,13 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800/60 pt-24 pb-12 overflow-hidden transition-colors duration-300">
       {/* Orqa fon effektlari */}
-      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-[-10%] w-[400px] h-[400px] bg-cyan-500/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-[-10%] w-125 h-125 bg-sky-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-[-10%] w-100 h-100 bg-cyan-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Newsletter qismi */}
-        <div className="w-full bg-slate-50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 p-8 md:p-12 rounded-[32px] shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 mb-20">
+        <div className="w-full bg-slate-50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 p-8 md:p-12 rounded-4xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 mb-20">
           <div className="max-w-md text-center lg:text-left">
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-slate-900 dark:text-white">Join Our Secret Escape Club</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm">Receive exclusive invitations, premium resort deals, and curated luxury guidance right in your inbox.</p>
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           <form onSubmit={(e) => e.preventDefault()} className="w-full lg:max-w-md flex items-center bg-white dark:bg-slate-950 p-2 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-inner">
             <Mail className="w-5 h-5 text-slate-400 ml-3 shrink-0" />
             <input type="email" placeholder="Enter your elite email..." className="bg-transparent w-full px-3 py-2 text-sm border-none outline-none text-slate-900 dark:text-white placeholder-slate-400" required />
-            <button type="submit" className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white p-3 rounded-xl hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 active:scale-95">
+            <button type="submit" className="bg-linear-to-r from-sky-500 to-cyan-500 text-white p-3 rounded-xl hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 active:scale-95">
               <Send className="w-4 h-4" />
             </button>
           </form>
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
         {/* Footer Linklari */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent w-fit">Trip Tour</h2>
+            <h2 className="text-2xl font-bold bg-linear-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent w-fit">Trip Tour</h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Crafting high-end, production-ready, ultra-luxury travel experiences for individuals who demand nothing but absolute perfection.</p>
             <div className="flex items-center space-x-3 text-xs font-semibold text-slate-500 bg-slate-100 dark:bg-slate-900 w-fit px-3 py-1.5 rounded-full border border-slate-200/60 dark:border-slate-800/60">
               <ShieldCheck className="w-4 h-4 text-cyan-500" />

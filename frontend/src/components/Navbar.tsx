@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
                 {isActive && (
                   <motion.div 
                     layoutId="activeNavIndicator" 
-                    className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-0.75 bg-linear-to-r from-sky-500 to-cyan-500 rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2.5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-full shadow-md hover:shadow-sky-500/20 transition-all duration-300"
+            className="px-6 py-2.5 bg-linear-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-full shadow-md hover:shadow-sky-500/20 transition-all duration-300"
           >
             {t('nav.bookNow') || 'Book Now'}
           </motion.button>
@@ -158,7 +158,7 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
             
-            <button className="w-full py-4 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-xl shadow-lg">
+            <button className="w-full py-4 bg-linear-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-xl shadow-lg">
               {t('nav.bookNow') || 'Book Now'}
             </button>
           </motion.div>

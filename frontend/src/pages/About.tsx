@@ -47,7 +47,7 @@ export const About: React.FC = () => {
               Our Story
             </div>
             <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              Crafting Memorable Journeys Since <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-500">2011</span>
+              Crafting Memorable Journeys Since <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-cyan-500">2011</span>
             </h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               At Trip Tour, we believe exploration broadens horizons and connects hearts. We started as a group of passionate travelers dreaming of making global explorations seamless, luxurious, and accessible to anyone wanting to experience raw natural beauty.
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
               Today, we operate globally, bringing premium luxury glassmorphism aesthetics and AI-driven predictive logistics to turn every single milestone travel into a masterpiece memory.
             </p>
             <div className="pt-4">
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300">
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-sky-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300">
                 Contact Our Agents
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -112,7 +112,7 @@ export const About: React.FC = () => {
         >
           {stats.map((stat) => (
             <div key={stat.id} className="space-y-2">
-              <h3 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-500">
+              <h3 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-cyan-500">
                 {stat.value}
               </h3>
               <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">

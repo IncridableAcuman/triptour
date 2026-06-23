@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Search, Star, Heart, MapPin, Calendar, Compass, ShieldCheck, Award, Users, ArrowRight, Eye, Sparkles, SlidersHorizontal, Layers } from 'lucide-react';
+import { Search, Star, Heart, MapPin, Calendar, Compass, ShieldCheck, Award, Users, ArrowRight, Eye, Sparkles, SlidersHorizontal } from 'lucide-react';
 import CountUp from 'react-countup';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
-import { fadeInUp, staggerContainer, hoverCardEffect } from '../animation/variants';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import { fadeInUp, hoverCardEffect } from '../animation/variants';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
       
       {/* 1. HERO SECTION */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-white dark:to-dark z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-white dark:to-dark z-10" />
         
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -75,7 +75,7 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl font-bold font-display text-white mb-6 leading-tight drop-shadow-md"
           >
-            Explore The World With <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Trip Tour</span>
+            Explore The World With <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Trip Tour</span>
           </motion.h1>
 
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-12 font-medium">
@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
               <label className="text-xs font-bold uppercase tracking-wider text-white/70 flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-accent" /> Date</label>
               <input type="date" className="bg-transparent border-none outline-none text-white text-sm w-full font-semibold filter brightness-200" />
             </div>
-            <button className="w-full h-full min-h-[52px] bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg shadow-primary/20 transform active:scale-95">
+            <button className="w-full h-full min-h-13 bg-linear-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg shadow-primary/20 transform active:scale-95">
               <Search className="w-5 h-5" />
               <span>Search Now</span>
             </button>
@@ -135,7 +135,7 @@ export const Home: React.FC = () => {
               <div className="p-4 bg-white dark:bg-white/5 rounded-2xl w-fit mb-6 shadow-sm group-hover:bg-primary/10 transition-colors">
                 {feat.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{feat.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-slate-900 ">{feat.title}</h3>
               <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">{feat.desc}</p>
             </motion.div>
           ))}
@@ -154,7 +154,7 @@ export const Home: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${activeCategory === cat ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md' : 'text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-light'}`}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${activeCategory === cat ? 'bg-linear-to-r from-primary to-secondary text-white shadow-md' : 'text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-light'}`}
               >
                 {cat}
               </button>
@@ -177,7 +177,7 @@ export const Home: React.FC = () => {
               >
                 <div className="relative h-72 overflow-hidden">
                   <img src={dest.image} alt={dest.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-100 transition-opacity duration-300" />
                   <button 
                     onClick={(e) => { e.stopPropagation(); toggleFav(dest.id); }}
                     className="absolute top-4 right-4 p-3 rounded-full bg-white/90 dark:bg-dark/80 backdrop-blur-md shadow-md hover:bg-white transition-colors z-20"
@@ -192,10 +192,10 @@ export const Home: React.FC = () => {
                 {/* MATN KO'RINISH XATOLIKLARI BUTKUL TUZATILDI */}
                 <div className="p-6 relative bg-white dark:bg-dark-light">
                   <span className="text-xs text-primary font-extrabold tracking-wider uppercase mb-1.5 block">{dest.country}</span>
-                  <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{dest.title}</h3>
+                  <h3 className="text-xl font-bold mb-4 text-slate-900  group-hover:text-primary transition-colors">{dest.title}</h3>
                   <div className="flex justify-between items-center border-t border-slate-100 dark:border-white/5 pt-4">
                     <span className="text-xs sm:text-sm text-slate-500 dark:text-gray-400 font-medium">All-inclusive package</span>
-                    <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">${dest.price}</span>
+                    <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">${dest.price}</span>
                   </div>
                 </div>
               </motion.div>
@@ -209,18 +209,18 @@ export const Home: React.FC = () => {
 
       {/* 4. STATISTICS WITH REAL-TIME COUNTERS (Rang va ko'rinish xatoliklari tuzatildi) */}
       <section ref={statsRef} className="my-16 py-20 bg-slate-900 dark:bg-dark text-white relative overflow-hidden rounded-[40px] max-w-7xl mx-auto px-6 border border-slate-800 dark:border-white/5 shadow-xl">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-30" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary/20 to-secondary/20 opacity-30" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10 text-center">
           {[
-            { value: 50, suffix: 'K+', label: 'Happy Travelers' },
-            { value: 120, suffix: '+', label: 'Premium Destinations' },
-            { value: 10, suffix: 'K+', label: 'Top Reviews' },
-            { value: 15, suffix: '', label: 'Years Experience' }
+            { value: 50, suffix: '12K+', label: 'Happy Travelers' },
+            { value: 120, suffix: '450+', label: 'Premium Destinations' },
+            { value: 10, suffix: '5K+', label: 'Top Reviews' },
+            { value: 15, suffix: '5', label: 'Years Experience' }
           ].map((stat, i) => (
             <div key={i} className="p-4">
               {/* Oq fondagi muammo bartaraf etildi, matn doim yorqin va ko'rinadigan bo'ladi */}
               <h3 className="text-4xl md:text-6xl font-extrabold font-display mb-2 text-white drop-shadow-[0_2px_10px_rgba(var(--primary-rgb),0.3)]">
-                {statsInView ? <CountUp end={stat.value} duration={2.5} /> : '0'}{stat.suffix}
+                {statsInView ? <CountUp end={stat.value} duration={2.5} /> : ''}{stat.suffix}
               </h3>
               <p className="text-xs md:text-sm text-slate-300 dark:text-gray-400 tracking-wide font-semibold uppercase">{stat.label}</p>
             </div>
@@ -254,7 +254,7 @@ export const Home: React.FC = () => {
 
       {/* 🌟 YANGI QO'SHILGAN FUNKSIYA: SPECIAL MEMBERSHIP & OFFERS BO'LIMI */}
       <section className="py-16 max-w-7xl mx-auto px-6 mb-12">
-        <div className="bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent dark:from-white/5 dark:to-transparent border border-primary/20 dark:border-white/10 rounded-[3rem] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div className="bg-linear-to-br from-primary/10 via-secondary/5 to-transparent dark:from-white/5 dark:to-transparent border border-primary/20 dark:border-white/10 rounded-[3rem] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-xl text-center md:text-left space-y-4">
             <div className="inline-flex items-center gap-1.5 bg-primary/20 dark:bg-primary/30 text-primary dark:text-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">

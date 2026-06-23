@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { SlidersHorizontal, Search, Star, Clock, Compass, AlertCircle } from 'lucide-react';
 import { Footer } from '../components/Footer';
 
@@ -12,7 +12,7 @@ const containerVariants = {
   }
 };
 
-const cardVariants = {
+const cardVariants:Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   show: { 
     opacity: 1, 
@@ -52,7 +52,7 @@ export const Tours: React.FC = () => {
         {/* Sarlavha qismi */}
         <div className="mb-12">
           <span className="text-sky-500 font-bold text-sm uppercase tracking-widest block mb-2">Luxury Packages</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-950 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-linear-to-r from-slate-950 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
             Find Your Premium Tour
           </h1>
         </div>
@@ -109,7 +109,7 @@ export const Tours: React.FC = () => {
                       onClick={() => setCategory(cat)}
                       className={`text-left text-sm py-2.5 px-4 rounded-xl font-medium transition-all duration-200 flex items-center justify-between ${
                         category === cat 
-                          ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/20 scale-[1.02]' 
+                          ? 'bg-linear-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/20 scale-[1.02]' 
                           : 'hover:bg-slate-100 dark:hover:bg-slate-950 text-slate-600 dark:text-slate-300'
                       }`}
                     >
@@ -160,7 +160,7 @@ export const Tours: React.FC = () => {
                       </div>
 
                       {/* Kontent qismi */}
-                      <div className="p-6 flex flex-col flex-grow justify-between">
+                      <div className="p-6 flex flex-col grow justify-between">
                         <div>
                           <div className="flex items-center justify-between mb-2">
                             <span className="text-xs font-bold tracking-wider uppercase text-sky-500">{tour.category}</span>
@@ -176,7 +176,7 @@ export const Tours: React.FC = () => {
                         <div className="flex justify-between items-center border-t border-slate-100 dark:border-slate-800/80 pt-4 mt-auto">
                           <div className="flex flex-col">
                             <span className="text-xs text-slate-400 uppercase font-semibold">Price per person</span>
-                            <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-500">${tour.price}</span>
+                            <span className="text-2xl font-black text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-cyan-500">${tour.price}</span>
                           </div>
                           <motion.button 
                             whileHover={{ scale: 1.05 }}

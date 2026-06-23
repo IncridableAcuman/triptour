@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Star, MapPin, Search, Compass, SlidersHorizontal } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
+import { Star, MapPin, Search, Compass } from 'lucide-react';
 import { Footer } from '../components/Footer';
 
 interface Destination {
@@ -88,7 +88,7 @@ const containerVariants = {
   }
 };
 
-const cardVariants = {
+const cardVariants:Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -128,7 +128,7 @@ export const Destinations: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white"
           >
-            Find Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-400">Dream Destination</span>
+            Find Your <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-cyan-400">Dream Destination</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -162,7 +162,7 @@ export const Destinations: React.FC = () => {
                 onClick={() => setActiveTab(category)}
                 className={`px-5 py-2 rounded-xl font-medium text-sm transition-all duration-300 shrink-0 ${
                   activeTab === category
-                    ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/25'
+                    ? 'bg-linear-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/25'
                     : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
@@ -195,7 +195,7 @@ export const Destinations: React.FC = () => {
                   transition={{ duration: 0.6 }}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-80" />
                 
                 {/* Badge Category */}
                 <span className="absolute top-4 left-4 bg-white/80 dark:bg-slate-900/80 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-md border border-white/20">
