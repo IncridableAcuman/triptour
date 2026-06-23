@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Award, Users, Heart, ArrowRight } from 'lucide-react';
+import { Footer } from '../components/Footer';
 
 const stats = [
   { id: 1, value: "12K+", label: "Happy Travelers" },
@@ -156,6 +157,9 @@ export const About: React.FC = () => {
         </div>
 
       </div>
+     <div className="pt-12">
+         <Footer/>
+     </div>
     </div>
   );
 };
