@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Star, Heart, MapPin, Calendar, Compass, ShieldCheck, Award, Users, ArrowRight, Eye, Sparkles, SlidersHorizontal } from 'lucide-react';
 import CountUp from 'react-countup';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import { Footer } from '../components/Footer';
+import { useInView } from "react-intersection-observer";
 
 export const Home: React.FC = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -17,7 +18,10 @@ export const Home: React.FC = () => {
   const [searchLocation, setSearchLocation] = useState<string>('');
   const [budgetLimit, setBudgetLimit] = useState<number>(3000);
   
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.1 });
+  const { ref: statsRef, inView: statsInView } = useInView({
+  triggerOnce: false,
+  threshold: 0.1,
+});
 
   const toggleFav = (id: string) => {
     setFavorites(prev => prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]);
