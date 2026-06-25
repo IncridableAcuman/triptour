@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { SlidersHorizontal, Search, Star, Clock, Compass, AlertCircle } from 'lucide-react';
+import {  Search, Star, Clock, Compass, AlertCircle, Sliders } from 'lucide-react';
 import { Footer } from '../components/Footer';
 
 // Premium animatsiya variantlari
@@ -62,7 +62,7 @@ export const Tours: React.FC = () => {
           {/* 1. Glassmorphism Filtrlar Paneli */}
           <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-6 rounded-3xl shadow-xl border border-slate-200/60 dark:border-slate-800/60 lg:sticky lg:top-28 z-10">
             <div className="flex items-center space-x-2 font-bold mb-6 pb-4 border-b border-slate-200/60 dark:border-slate-800/60">
-              <SlidersHorizontal className="w-5 h-5 text-sky-500" />
+              <Sliders className="w-5 h-5 text-sky-500" />
               <span className="text-lg">Filter Options</span>
             </div>
 

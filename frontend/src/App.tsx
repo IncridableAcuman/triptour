@@ -14,8 +14,6 @@ function App() {
   useEffect(() => {
     const root = window.document.documentElement; // <html> elementi
     
-    // Konsolda nima o'zgarayotganini ko'rish uchun:
-    console.log("Joriy rejim:", theme);
 
     if (theme === 'dark') {
       root.classList.add('dark');
