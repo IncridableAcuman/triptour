@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
   const [searchLocation, setSearchLocation] = useState<string>("");
   const [budgetLimit, setBudgetLimit] = useState<number>(3000);
 
-  const { ref: statsRef, inView: statsInView } = useInView({
+  const { ref: statsRef } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
@@ -206,8 +206,8 @@ export const Home: React.FC = () => {
             </div>
             <div className="flex flex-col space-y-1.5 p-2 border-t md:border-t-0 md:border-l border-white/10">
               <label className="text-xs font-bold uppercase tracking-wider text-white/70 flex items-center gap-1.5">
-                <Sliders className="w-3.5 h-3.5 text-secondary" /> Max
-                Budget (${budgetLimit})
+                <Sliders className="w-3.5 h-3.5 text-secondary" /> Max Budget ($
+                {budgetLimit})
               </label>
               <input
                 type="range"
@@ -369,7 +369,7 @@ export const Home: React.FC = () => {
         )}
       </section>
 
-      {/* 4. STATISTICS WITH REAL-TIME COUNTERS (Rang va ko'rinish xatoliklari tuzatildi) */}
+      {/* 4. STATISTICS WITH REAL-TIME COUNTERS */}
       <section
         ref={statsRef}
         className="my-16 py-20 bg-slate-900 dark:bg-dark text-white relative overflow-hidden rounded-[40px] max-w-7xl mx-auto px-6 border border-slate-800 dark:border-white/5 shadow-xl"
@@ -383,8 +383,9 @@ export const Home: React.FC = () => {
             { value: 15, suffix: "5", label: "Years Experience" },
           ].map((stat, i) => (
             <div key={i} className="p-4">
-              {/* Oq fondagi muammo bartaraf etildi, matn doim yorqin va ko'rinadigan bo'ladi */}
               <h3 className="text-4xl md:text-6xl font-extrabold font-display mb-2 text-white drop-shadow-[0_2px_10px_rgba(var(--primary-rgb),0.3)]">
+                {/* CountUp o'rniga to'g'ridan-to'g'ri stat.value qo'yildi */}
+                {stat.value}
                 {stat.suffix}
               </h3>
               <p className="text-xs md:text-sm text-slate-300 dark:text-gray-400 tracking-wide font-semibold uppercase">
