@@ -17,7 +17,15 @@ export const AnimatedCursor: React.FC = () => {
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).tagName === 'BUTTON' || (e.target as HTMLElement).tagName === 'A' || (e.target as HTMLElement).closest('.interactive-card')) {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      if (
+        target.tagName === 'BUTTON' ||
+        target.tagName === 'A' ||
+        target.tagName === 'INPUT' ||
+        target.closest('button') ||
+        target.closest('a')
+      ) {
         setIsHovering(true);
       } else {
         setIsHovering(false);
@@ -34,12 +42,12 @@ export const AnimatedCursor: React.FC = () => {
 
   return (
     <motion.div
-      className={`fixed top-0 left-0 w-6 h-6 rounded-full border-2 border-primary pointer-events-none z-9999 hidden md:block backdrop-blur-[1px]`}
+      className="fixed top-0 left-0 w-6 h-6 rounded-full border-2 border-sky-500 pointer-events-none z-50 hidden md:block"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
-        backgroundColor: isHovering ? 'rgba(14, 165, 233, 0.2)' : 'rgba(14, 165, 233, 0)',
-        scale: isHovering ? 1.5 : 1,
+        backgroundColor: isHovering ? 'rgba(14, 165, 233, 0.25)' : 'transparent',
+        scale: isHovering ? 1.6 : 1,
       }}
     />
   );
